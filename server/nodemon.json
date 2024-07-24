@@ -1,0 +1,6 @@
+{
+  "ext": "ts",
+  "execMap": {
+    "ts": "cross-env node --loader ts-node/esm"
+  }
+}

@@ -9,10 +9,6 @@ const connection = await mysql.createConnection({
   uri: process.env.DB_URL
 })
 
-connection.ping().then(() => {
-  console.log('MySQL DB connected')
-})
-
 const db = drizzle(connection)
 
 export default db

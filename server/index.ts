@@ -1,14 +1,15 @@
 import express from 'express'
-import dotenv from 'dotenv'
+import bodyParser from 'body-parser'
+import 'dotenv/config'
+import api from './api/index.js'
 
-import apiRouter from './api/index.js'
-
-dotenv.config()
 const app = express()
+
+app.use(bodyParser.json())
+
+app.use('/api', api)
+
 const PORT = process.env.PORT
-
-app.use('/api', apiRouter)
-
 app
   .listen(PORT, () => {
     console.log('Server running at port', PORT)
