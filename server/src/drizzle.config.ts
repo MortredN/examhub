@@ -5,8 +5,8 @@ if (!process.env.DB_URL) {
 }
 
 export default defineConfig({
-  schema: './db/schema.ts',
-  out: './migrations',
+  schema: './src/db/schema.ts',
+  out: './src/db/migrations',
   dbCredentials: {
     url: process.env.DB_URL
   },

@@ -1,7 +1,8 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import 'dotenv/config'
-import api from './api/index.js'
+
+import api from './api/index'
 
 const app = express()
 

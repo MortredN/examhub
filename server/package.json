@@ -2,15 +2,15 @@
   "name": "examhub-server",
   "version": "1.0.0",
   "description": "Server-side APIs for ExamHub",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "author": "MortredN",
   "license": "MIT",
   "private": "true",
-  "type": "module",
   "scripts": {
-    "dev": "nodemon index.ts",
+    "dev": "nodemon",
     "build": "tsc",
-    "migrate": "drizzle-kit generate && drizzle-kit migrate"
+    "start": "node ./dist/index.js",
+    "migrate": "drizzle-kit generate --config=./src/drizzle.config.ts && drizzle-kit migrate --config=./src/drizzle.config.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -18,15 +18,20 @@
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.32.1",
     "express": "^4.19.2",
-    "mysql2": "^3.10.3"
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.10.3",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/body-parser": "^1.19.5",
     "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "cross-env": "^7.0.3",
     "drizzle-kit": "^0.23.0",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.3"
   }
 }

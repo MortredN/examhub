@@ -5,10 +5,10 @@ if (!process.env.DB_URL) {
   throw new Error('MySQL DB credentials error')
 }
 
-const connection = await mysql.createConnection({
+const pool = mysql.createPool({
   uri: process.env.DB_URL
 })
 
-const db = drizzle(connection)
+const db = drizzle(pool)
 
 export default db
